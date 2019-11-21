@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1574133801048.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "DE05BE9D",
+    "lastKnownWriteTime" : 8026363914660965410,
+    "last_content_update" : 1574133801048,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "11D52629",
+        "caption" : "FPBV",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=FPBV&cache_key=11D52629",
+        "displayedObservations" : "429",
+        "environment" : "",
+        "expression" : "FPBV",
+        "object" : "FPBV",
+        "preview" : "0",
+        "totalObservations" : "429",
+        "variables" : "3"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

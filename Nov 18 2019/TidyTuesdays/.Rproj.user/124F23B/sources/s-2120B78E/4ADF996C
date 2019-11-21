@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1574132597981.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "4ADF996C",
+    "lastKnownWriteTime" : 7219114507769176429,
+    "last_content_update" : 1574132597981,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "C7ADA3",
+        "caption" : "birds",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=birds&cache_key=C7ADA3",
+        "displayedObservations" : "86",
+        "environment" : "",
+        "expression" : "birds",
+        "object" : "birds",
+        "preview" : "0",
+        "totalObservations" : "86",
+        "variables" : "1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

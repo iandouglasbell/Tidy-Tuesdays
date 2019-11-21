@@ -1,0 +1,126 @@
+# Tidy Tuesday 
+# New Zealand Bird of the Year
+#Ian Bell
+
+#Goal: Find the New Zealand Bird of the Year and Visualize it 
+
+library(tidyverse)
+library(lubridate)
+
+nz_bird <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-11-19/nz_bird.csv")
+
+#Make a new column of rank numeric
+
+vote_rank <- "[[:digit:]]+"
+
+nz_bird$rank <- str_extract(nz_bird$vote_rank, vote_rank)
+nz_bird$rank <- as.numeric(nz_bird$rank)
+
+
+#Find total number of first preference bird votes
+#86 total species
+
+#Create list of Birds and number of votes per rank
+
+FPBV <- nz_bird%>%
+  count(bird_breed, rank) %>%
+  arrange(rank, desc(n))
+
+#Count Number of total first place votes
+
+First <- nz_bird %>%
+  filter(rank == 1) %>%
+  count() 
+
+#43,460 total first place votes cast, Yellow-eyed Penguin was the top number of first-place votes with 5,757. Not an absolute majority, so we press on with the . 
+
+#Assign a unique voter id (voter_id) for every voter (assuming everyone only voted once)
+nz_bird <- nz_bird %>%
+  group_by(rank) %>%
+  mutate(voter_id = 1:n())
+
+#Create list of unique birds (candidates)
+
+birds <- unique(nz_bird$bird_breed)
+birds <- as.list(birds)
+View(birds)
+
+nz_bird %>%
+  summarise()
+
+library(votesys)
+
+vote <- create_vote(nz_bird, xtype = 2, candidate = birds)
+
+
+
+test <- nz_bird %>%
+  group_by(voter_id) %>%
+  slice(which.min(rank)) %>%
+  ungroup() %>%
+  count(bird_breed) %>%
+  arrange(desc(n)) %>%
+  summarize(min = last(bird_breed))
+
+
+round2 <- nz_bird %>%
+  filter(bird_breed != first(test$min))
+
+#function
+
+vote_fun <- function(x, y, z, d){
+  x <- group_by(.data = x, .dots = lazyeval::lazy(voter_id))
+  d <- group_by(.data = x, .dots = lazyeval::lazy(voter_id)) %>%
+    slice(which.min(rank)) %>%
+    ungroup() 
+  y <- d %>%
+    count(bird_breed) %>%
+    arrange(desc(n)) %>%
+    summarize(last = last(bird_breed))
+  z <- x %>%
+    filter(bird_breed != y$last)
+  e <- z %>%
+    group_by(.dots = lazyeval::lazy(voter_id)) %>%
+    slice(which.min(rank)) %>%
+    ungroup() %>%
+    count(bird_breed) %>%
+    arrange(desc(n)) %>%
+    mutate(birds$i)
+  return(e)
+}
+
+what <- vote_fun(nz_bird)
+
+what2 <- vote_fun(what)
+
+z <- x %>%
+  filter(bird_breed != y)
+return(z)
+
+%>%
+  summarize(majority = first(n), rest = cumsum(n))
+
+%>%
+  count(bird_breed) %>%
+  arrange(desc(n)) %>%
+  slice( 1:(n()-1)) %>%
+  ungroup() 
+
+
+y <- last(bird_breed) %>%
+  filter(bird_breed != y)
+
+
+#Plot of votes over time period, by unique voter
+
+vote_time <- nz_bird %>%
+  mutate(hour = str_pad(hour, width=2, side="left", pad="0")) %>%
+  mutate(hour = str_pad(hour, width=4, side="right", pad="0")) %>%
+  mutate(hour = as.POSIXct(hour, format = "%H%M")) %>%
+  mutate(hour = format(hour, "%H:%M:%S")) %>%
+  mutate(datetime = as.POSIXct(paste(date, hour), format="%Y-%m-%d %H:%M:%S")) %>%
+  filter(rank == 1) %>%
+  mutate(dow = wday(datetime, label = TRUE))
+
+Voters_time <- ggplot(vote_time, aes(x=datetime, y=voter_id, color = dow)) +geom_point(size = 2) + scale_x_datetime(breaks = "1 day", date_labels = "%b %d") + labs(title = "New Zealand Bird of the Year Voting by Date", y = "Cumulative Votes", x = "Date") + theme_minimal()
+Voters_time
