@@ -39,21 +39,7 @@ nz_bird <- nz_bird %>%
   group_by(rank) %>%
   mutate(voter_id = 1:n())
 
-#Create list of unique birds (candidates)
-
-birds <- unique(nz_bird$bird_breed)
-birds <- as.list(birds)
-View(birds)
-
-nz_bird %>%
-  summarise()
-
-library(votesys)
-
-vote <- create_vote(nz_bird, xtype = 2, candidate = birds)
-
-
-
+#Test code to figure out lowest vote-getting bird by round
 test <- nz_bird %>%
   group_by(voter_id) %>%
   slice(which.min(rank)) %>%
@@ -63,10 +49,7 @@ test <- nz_bird %>%
   summarize(min = last(bird_breed))
 
 
-round2 <- nz_bird %>%
-  filter(bird_breed != first(test$min))
-
-#function
+#Function to determine bird getting lowest primary votes per round. Works, still need to figure out how to loop the function and record the results. 
 
 vote_fun <- function(x, y, z, d){
   x <- group_by(.data = x, .dots = lazyeval::lazy(voter_id))
@@ -88,27 +71,6 @@ vote_fun <- function(x, y, z, d){
     mutate(birds$i)
   return(e)
 }
-
-what <- vote_fun(nz_bird)
-
-what2 <- vote_fun(what)
-
-z <- x %>%
-  filter(bird_breed != y)
-return(z)
-
-%>%
-  summarize(majority = first(n), rest = cumsum(n))
-
-%>%
-  count(bird_breed) %>%
-  arrange(desc(n)) %>%
-  slice( 1:(n()-1)) %>%
-  ungroup() 
-
-
-y <- last(bird_breed) %>%
-  filter(bird_breed != y)
 
 
 #Plot of votes over time period, by unique voter
