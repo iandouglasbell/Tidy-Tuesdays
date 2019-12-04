@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1575330745604.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "E216EBEE",
+    "lastKnownWriteTime" : 1574296902,
+    "last_content_update" : 1574296902,
+    "path" : "~/GitHub/Tidy-Tuesdays/Nov 18 2019/NZ_Bird.R",
+    "project_path" : "Nov 18 2019/NZ_Bird.R",
+    "properties" : {
+        "cursorPosition" : "86,322",
+        "scrollLine" : "66"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

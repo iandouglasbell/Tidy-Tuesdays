@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1575479893446.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "27F5F60C",
+    "lastKnownWriteTime" : 1575479116,
+    "last_content_update" : 1575479893446,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "id" : "0bd69f0df82f46769eb76136aae9dfe4",
+        "name" : "Philly",
+        "title" : "Philly"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "object_explorer"
+}

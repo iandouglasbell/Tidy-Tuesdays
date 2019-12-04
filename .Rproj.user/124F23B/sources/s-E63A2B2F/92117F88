@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1575328729885.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2061691997",
+    "id" : "92117F88",
+    "lastKnownWriteTime" : 1575484852,
+    "last_content_update" : 1575484852280,
+    "path" : "~/GitHub/Tidy-Tuesdays/Dec 2 2019/PA_Tickets.R",
+    "project_path" : "Dec 2 2019/PA_Tickets.R",
+    "properties" : {
+        "cursorPosition" : "41,2",
+        "scrollLine" : "22",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
