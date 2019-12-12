@@ -45,10 +45,19 @@ ShootingPercentHex <- left_join(MadeHexValues, MissedHexValues, by = c("x" = "x"
   filter(!is.na(PercentBins))
   
 #Plot shooting percent using FiveThirtyEight theme
-ShootingPercentPlot <-ggplot(data = ShootingPercentHex, aes(x,y)) + geom_hex(stat = "identity", na.rm = TRUE, aes(fill = PercentBins)) + ylim(-47,0) + theme_fivethirtyeight(base_size = 16, base_family = "sans") + labs(title = "LeBron James Sweet Spots", subtitle = 'All of his shots, 2010-17 regular seasons and playoffs' ,caption = 'Data from NBA.com and ESPN Shot Tracker \nCourt geom from BasketballAnalyzeR package \n#TidyTuesday • @Ian_Bellio') +  theme(axis.title=element_blank(),axis.text=element_blank(),axis.ticks=element_blank(), panel.grid.major = element_blank())  +  guides(alpha = FALSE, size = FALSE) + scale_fill_manual(values = c("#3269af","#47abca","#e5dc9c","#f47622","#e62d2f"))
+ShootingPercentPlot <-ggplot(data = ShootingPercentHex, aes(x,y)) 
++ geom_hex(stat = "identity", na.rm = TRUE, aes(fill = PercentBins)) 
++ ylim(-47,-10) 
++ theme_fivethirtyeight(base_size = 20, base_family = "sans") 
++ labs(title = "LeBron James Sweet Spots", subtitle = 'All of his shots, 2010-17 regular seasons and playoffs' ,caption = 'Data from NBA.com and ESPN Shot Tracker \nCourt geom from BasketballAnalyzeR package \n#TidyTuesday • @Ian_Bellio') 
++  theme(axis.title=element_blank(),axis.text=element_blank(),axis.ticks=element_blank(), panel.grid.major = element_blank())  +  guides(alpha = FALSE, size = FALSE) 
++ scale_fill_manual(values = c("#3269af","#47abca","#e5dc9c","#f47622","#e62d2f")) 
++ guides(fill=guide_legend(title="Shooting Percentage")) 
 ShootingPercentPlot
 
 #Overlay BasketballAnalyzeR pre-made court
-drawNBAcourt(ShootingPercentPlot, size= 0.8, col = "#666667")
+Final <- drawNBAcourt(ShootingPercentPlot, size= 1, col = "black")
+Final
 
 #Save as image
+ggsave("LeBronShots.png", dpi = 300, width = 11, height = 12, units = "in")
