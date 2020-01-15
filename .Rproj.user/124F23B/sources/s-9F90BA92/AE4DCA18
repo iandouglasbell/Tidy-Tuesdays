@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1579049071783.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "AE4DCA18",
+    "lastKnownWriteTime" : 8026363914660965410,
+    "last_content_update" : 1579049071783,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "93A01C7",
+        "caption" : "top15",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=top15&cache_key=93A01C7",
+        "displayedObservations" : 15,
+        "environment" : "",
+        "expression" : "top15",
+        "object" : "top15",
+        "preview" : 0,
+        "totalObservations" : 15,
+        "variables" : 10
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
