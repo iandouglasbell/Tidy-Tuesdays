@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1579649764103.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "9DB12887",
+    "lastKnownWriteTime" : 8026363914660965410,
+    "last_content_update" : 1579649764103,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "5877B338",
+        "caption" : "annual_trends2",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=annual_trends2&cache_key=5877B338",
+        "displayedObservations" : 26230,
+        "environment" : "",
+        "expression" : "annual_trends2",
+        "object" : "annual_trends2",
+        "preview" : 0,
+        "totalObservations" : 26230,
+        "variables" : 23
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 11,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

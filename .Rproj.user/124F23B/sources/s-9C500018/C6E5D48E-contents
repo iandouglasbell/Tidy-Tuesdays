@@ -9,6 +9,7 @@ spotify_songs <- readr::read_csv('https://raw.githubusercontent.com/rfordatascie
 
 #Summarize each song into release year, generate summary stats
 annual_trends <- spotify_songs %>%
+  distinct(track_name, track_artist, .keep_all = TRUE) %>%
   mutate(year_released=ymd(track_album_release_date, truncated = 2L)) %>%
   mutate(year_released = year(year_released)) %>%
   filter(year_released >= 1980) %>%
@@ -19,7 +20,10 @@ annual_trends <- spotify_songs %>%
   
 
 song_plot <- ggplot(annual_trends) + geom_point(aes(x=year_released, y=score), size=2, color="#F1AE86") + geom_smooth(aes(x=year_released, y=score), color="#667682", se=FALSE, size=1.4) + facet_wrap(~Parameter, scales = "free") + theme_minimal() + theme(text = element_text(size=14, family = "Verdana", color = "#F1AE86")) + labs(title = "SONG ATTRIBUTE TRENDS 1980-2020", subtitle = 'Recently songs have trended more danceable, shorter,\n less energetic, sader, louder, and faster.' ,caption = 'Based on annual averages\nData by Spotify via spotifyr package\n#TidyTuesday   @Ian_Bellio', y="", x="") + theme(axis.text = element_text(colour = "#667682")) + theme(plot.title = element_text(size=22, family = "Verdana", face="bold")) + theme(strip.background = element_rect(color="#7A7676", fill="#FDF7C0", size=0.5, linetype="solid")) +
-  theme(plot.margin=unit(c(1,1,1,1),"cm")) + theme(plot.subtitle=element_text(size=16, family = "Verdana", face="italic")) + theme(plot.background = element_rect(fill = "azure1"))
+  theme(plot.margin=unit(c(0.5,1.5,0.5,0.5),"cm")) + theme(plot.subtitle=element_text(size=16, family = "Verdana", face="italic")) + theme(plot.background = element_rect(fill = "azure1"))
 song_plot
 
 ggsave("SongAttributes.png", dpi = 300, width = 12, height = 9, units = "in")
+
+annual_trends2 <- spotify_songs %>%
+  distinct(track_name, track_artist, .keep_all = TRUE)

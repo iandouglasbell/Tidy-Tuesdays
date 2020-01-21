@@ -12,16 +12,16 @@
     "path" : null,
     "project_path" : null,
     "properties" : {
-        "cacheKey" : "62991DCB",
+        "cacheKey" : "26D26045",
         "caption" : "spotify_songs",
-        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=spotify_songs&cache_key=62991DCB",
-        "displayedObservations" : 32833,
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=spotify_songs&cache_key=26D26045",
+        "displayedObservations" : "32833",
         "environment" : "",
         "expression" : "spotify_songs",
         "object" : "spotify_songs",
-        "preview" : 0,
-        "totalObservations" : 32833,
-        "variables" : 23
+        "preview" : "0",
+        "totalObservations" : "32833",
+        "variables" : "23"
     },
     "read_only" : false,
     "read_only_alternatives" : [
