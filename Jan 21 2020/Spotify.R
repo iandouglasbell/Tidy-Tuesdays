@@ -1,10 +1,11 @@
 #Tidy Tuesday Spotify Songs
 #Ian Bell   January 21, 2020
 
+#Libraries
 library(tidyverse)
 library(lubridate)
 
-#pull in data
+#Pull in data
 spotify_songs <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-01-21/spotify_songs.csv')
 
 #Summarize each song into release year, generate summary stats
@@ -18,7 +19,7 @@ annual_trends <- spotify_songs %>%
   summarise(Danceability = mean(danceability), Energy = mean(energy) , "Loudness (db)" = mean(loudness), "Happiness (Valence)" = mean(valence), "Tempo (BPM)" = mean(tempo), "Duration (Min)"= mean(duration_min)) %>%
   pivot_longer(-year_released, names_to = "Parameter", values_to = "score")
   
-
+#Plot
 song_plot <- ggplot(annual_trends) + 
   geom_point(aes(x=year_released, y=score), size=2, color="#F1AE86") +
   geom_smooth(aes(x=year_released, y=score), color="#667682", se=FALSE, size=1.4) + 
