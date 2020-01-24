@@ -34,3 +34,17 @@ song_plot <- ggplot(annual_trends) +
 song_plot
 
 ggsave("SongAttributes.png", dpi = 300, width = 12, height = 9, units = "in")
+
+
+#plot with all data (not summarized by year)
+all_points <- spotify_songs %>%
+  distinct(track_name, track_artist, .keep_all = TRUE) %>%
+  mutate(year_released=ymd(track_album_release_date, truncated = 2L)) %>%
+  mutate(duration_min = duration_ms/60000) 
+
+song_plot_all <- ggplot(all_points) + 
+  geom_point(aes(x=year_released, y=danceability), size=2, color="#F1AE86") +
+  geom_smooth(aes(x=year_released, y=danceability), color="#667682", se=FALSE, size=1.4) 
+song_plot_all
+
+
