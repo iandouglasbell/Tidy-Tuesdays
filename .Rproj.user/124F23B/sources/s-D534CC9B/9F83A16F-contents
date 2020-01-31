@@ -183,7 +183,7 @@ Tristaniopsis_map
 
 ***
 
-R Markdown Code used to produce this webpage can be viewed at
+R Markdown Code used to produce this webpage can be viewed [here](https://github.com/iandouglasbell/iandouglasbell.github.io/blob/master/SFtrees.Rmd).
 
 This is fun product for #TidyTuesday, a weekly social data project focused on using R programming language tidyverse packages to clean, wrangle, tidy, and plot a new dataset every Tuesday.  Thanks to Yan Holtz and his [Pimp my RMD: a few tips for R markdown](https://holtzy.github.io/Pimp-my-rmd/) for helpful tips.
 
