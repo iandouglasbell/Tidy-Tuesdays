@@ -1,0 +1,27 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1580347366411.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2519957644",
+    "id" : "9F83A16F",
+    "lastKnownWriteTime" : 1580499412,
+    "last_content_update" : 1580499412907,
+    "path" : "~/GitHub/iandouglasbell.github.io/SFtrees.Rmd",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "161,29",
+        "last_setup_crc32" : "D534CC9B3fd66294",
+        "scrollLine" : "148",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

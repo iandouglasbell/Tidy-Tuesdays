@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1580331560801.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "4A911FD7",
+    "lastKnownWriteTime" : 1580332767,
+    "last_content_update" : 1580332767842,
+    "path" : "~/Ian Personal/NBA/NBA/NBA_1.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "23,105",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
