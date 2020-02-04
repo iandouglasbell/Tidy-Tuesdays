@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1580847284548.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "7A1E5758",
+    "lastKnownWriteTime" : 7305804402363954017,
+    "last_content_update" : 1580847284548,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "C625FA2",
+        "caption" : "standings",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=standings&cache_key=C625FA2",
+        "displayedObservations" : "638",
+        "environment" : "",
+        "expression" : "standings",
+        "object" : "standings",
+        "preview" : "0",
+        "totalObservations" : "638",
+        "variables" : "15"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

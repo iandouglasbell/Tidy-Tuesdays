@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1580832362499.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "F11B5097",
+    "lastKnownWriteTime" : 8675377778773860922,
+    "last_content_update" : 1580832362499,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "54FA906C",
+        "caption" : "attendance",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=attendance&cache_key=54FA906C",
+        "displayedObservations" : "10846",
+        "environment" : "",
+        "expression" : "attendance",
+        "object" : "attendance",
+        "preview" : "0",
+        "totalObservations" : "10846",
+        "variables" : "8"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

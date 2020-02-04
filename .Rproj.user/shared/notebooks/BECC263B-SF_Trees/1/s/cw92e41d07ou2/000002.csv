@@ -1,8 +1,0 @@
-"0","sf_map <- get_map(location = c(left = -122.5601, bottom = 37.6993, right = -122.3167, top = 37.8116), zoom = 14 , color = ""color"")"
-"0",""
-"0","sf_plot <- ggmap(sf_map) +"
-"0","  geom_point(data = Platanus, aes(x =longitude, y =latitude,label = species, label1=address, label2 = dbh, label3 = date), size=1.1, alpha = 0.45, shape = 1, color = ""purple"") +"
-"0","  theme(axis.title=element_blank(),axis.text=element_blank(),axis.ticks=element_blank())"
-"0",""
-"0",""
-"0","ggplotly(sf_plot, height = 450, width=900, tooltip = c(""species"",""address"", ""dbh"", ""date""))"
