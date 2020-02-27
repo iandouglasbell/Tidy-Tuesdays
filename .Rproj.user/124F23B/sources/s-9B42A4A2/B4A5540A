@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1582673844995.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "B4A5540A",
+    "lastKnownWriteTime" : 8026363914660965410,
+    "last_content_update" : 1582673844995,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "8AFA35A2",
+        "caption" : "CA_Schools",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=CA_Schools&cache_key=8AFA35A2",
+        "displayedObservations" : 57,
+        "environment" : "",
+        "expression" : "CA_Schools",
+        "object" : "CA_Schools",
+        "preview" : 0,
+        "totalObservations" : 57,
+        "variables" : 17
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

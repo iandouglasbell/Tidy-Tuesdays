@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1582048253978.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "A7F8349E",
+    "lastKnownWriteTime" : 1582670301,
+    "last_content_update" : 1582670301291,
+    "path" : "~/GitHub/Tidy-Tuesdays/2020-02-18/Carbon Emission.R",
+    "project_path" : "2020-02-18/Carbon Emission.R",
+    "properties" : {
+        "cursorPosition" : "52,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 11,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
