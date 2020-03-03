@@ -1,5 +1,8 @@
 # Tidy-Tuesdays
-My name is Ian Bell. I work in the environmental field and use TidyTuesdays as a way of improving my R and data analysis skills. I usually tweet my code and plots at [@Ian_Bellio](https://twitter.com/Ian_Bellio), and appreciate thoughts on how my code and data visualization could improve. Hit me up!
+My name is Ian Bell. I work in the environmental field and use TidyTuesdays as a way of improving my R and data analysis skills. I usually tweet my code and plots at [@Ian_Bellio](https://twitter.com/Ian_Bellio), and appreciate thoughts on how my code and data visualization could improve.
+
+### [2020-03-03 NHL Stats](https://github.com/iandouglasbell/Tidy-Tuesdays/tree/master/2020-03-03)
+![2020 Week 8](https://github.com/iandouglasbell/Tidy-Tuesdays/blob/master/2020-03-03/NHL.png)
 
 ### [2020-02-27 Measles Vaccinations](https://github.com/iandouglasbell/Tidy-Tuesdays/tree/master/2020-02-24)
 ![2020 Week 7](https://github.com/iandouglasbell/Tidy-Tuesdays/blob/master/2020-02-24/CA_Measles.png)
