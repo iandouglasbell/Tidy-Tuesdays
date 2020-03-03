@@ -50,4 +50,4 @@ Goal_Age <- ggplot()+
 
 Goal_Age
 
-ggsave("NHL.png", dpi = 300, width = 9.5, height = 8.5, units = "in")
+ggsave("NHL.png", dpi = 300, width = 9.5, height = 6.5, units = "in")
