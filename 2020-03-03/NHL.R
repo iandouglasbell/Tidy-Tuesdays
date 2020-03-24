@@ -33,7 +33,7 @@ Goal_Age <- ggplot()+
   gghighlight(player == "Wayne Gretzky" | player == "Alex Ovechkin"	, calculate_per_facet = TRUE, use_direct_label = FALSE)+
   theme_minimal()+
   labs(
-    title = "<span style = 'font-size:20pt'><b>The Great One Could *Pass*</b><br><span style = 'font-size:16pt'>Current NHL star <span style = 'color:#F8766D;'>**Alex Ovechkin**</span> just scored his 700th career goal, approaching hockey legend <span style = 'color:#00BFC4;'>**Wayne Gretzky**</span>'s total goals record of 894. But when we look at total accumulated  **points** (goals + assists), no one past or present can touch Gretzky.", x= "Age", y = "") +
+    title = "<span style = 'font-size:20pt'><b>The Great One Could *Pass*</b><br><span style = 'font-size:16pt'>Current NHL star <span style = 'color:#F8766D;'>**Alex Ovechkin**</span> just scored his 700th career goal, approaching hockey legend <span style = 'color:#00BFC4;'>**Wayne Gretzky**</span>'s total goals record of 894. But when we look at total accumulated  **points** (goals + assists), no one past or present can touch Gretzky.", x= "Age", y = "", caption = "Gray lines represent top 250 NHL Goal Scorers\nData: Washington Post • #TidyTuesday • @Ian_Bellio") +
   theme(
     plot.title.position = "plot",
     plot.title = element_textbox_simple(
@@ -45,8 +45,9 @@ Goal_Age <- ggplot()+
     ))+
   theme(text = element_text(size=18, family = "Helvetica"))+
   theme(strip.background = element_rect(color="black", size=1.25, linetype="solid"), )+
-  theme(legend.position = "none")
+  theme(legend.position = "none")+
+  theme(plot.caption = element_text(size = 12))
 
 Goal_Age
 
-ggsave("NHL.png", dpi = 300, width = 9.5, height = 8.5, units = "in")
+ggsave("NHL.png", dpi = 300, width = 9.5, height = 6.5, units = "in")
