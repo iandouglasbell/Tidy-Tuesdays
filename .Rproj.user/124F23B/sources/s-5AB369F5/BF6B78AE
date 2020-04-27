@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1586808965822.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3352593541",
+    "id" : "BF6B78AE",
+    "lastKnownWriteTime" : 1588008058,
+    "last_content_update" : 1588008058624,
+    "path" : "~/GitHub/Tidy-Tuesdays/2020-04-13/Rap.R",
+    "project_path" : "2020-04-13/Rap.R",
+    "properties" : {
+        "cursorPosition" : "46,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled2"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

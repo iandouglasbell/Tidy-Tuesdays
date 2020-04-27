@@ -1,0 +1,139 @@
+###2017 Keoughs Hot Springs Graphing 
+library(readxl)
+library(ggplot2)
+library(scales)
+library(ggthemes)
+library(lubridate)
+library(extrafont)
+library(dplyr)
+library(tidyr)
+library(tibble)
+library(knitr)
+require(pander)
+library(xtable)
+library(kableExtra)
+library(moments)
+library(cowplot)
+
+knitr::opts_chunk$set(dpi=300,fig.width=7)
+
+
+Results <- read_excel("~/106/2019 Summary Report/2019 Report/Keoughs/LPPSR_Handheld_FY2019.xlsx", 
+                      sheet = "Keoughs")
+Results$date = as.POSIXct(Results$date)
+Results = as.data.frame(Results)
+
+Upper = filter(Results, pool == "upper")
+Upper$facet = factor(Upper$month, levels = c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"))
+
+Lower = subset(Results, Results$pool == "lower")
+Lower$facet = factor(Lower$month, levels = c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"))
+
+
+TempPlot <- ggplot(Results, aes(x=date, y=temp, color = pool)) + geom_line() + scale_x_datetime( breaks = date_breaks("1 month"), labels = date_format("%b"), limits=c(as.POSIXct("2017-07-01"),as.POSIXct("2018-06-30")))
+TempPlot
+
+#Graph monthly average temperatures of field measurements 2000-2016
+
+#both Sites, all years
+TempAll = ggplot(Results, aes(y=temp, x=date, color=pool, group=pool, shape=pool)) + geom_point( size=2)+ theme_bw(base_size=9) +geom_smooth(size=1.8, alpha=0.4)   + labs(title = NULL,  x = NULL, y = expression("Temperature " ( degree~F))) + scale_x_datetime( breaks = date_breaks("1 year"), labels = date_format("%Y"), limits=c(as.POSIXct("2000-01-01"),as.POSIXct("2018-07-01"))) 
+TempAll
+
+#Upper Faceted by month
+UpperTempAll = ggplot(Upper, aes(y=temp, x=date)) + geom_line(size=1.8, alpha=0.3) + geom_point( size=3.5, aes(color=temp))+ theme_bw(base_size=12) + labs(title = "Upper Pool",  x = "Year", y = expression("Temperature " ( degree~F))) + scale_x_datetime( breaks = date_breaks("1 year"), labels = date_format("%y"), limits=c(as.POSIXct("2000-01-01"),as.POSIXct("2018-07-01"))) + facet_grid(facet~.) + scale_color_gradient2(low = "blue", high = "red", mid = "yellow", midpoint = 90,breaks= c(80,90,100,110))  
+UpperTempAll
+
+#Lower Facet by month
+LowerTempAll = ggplot(Lower, aes(y=temp, x=date)) + geom_line(size=1.8, alpha=0.3) + geom_point( size=3.5, aes(color=temp))+ theme_bw(base_size=12) + labs(title = "Lower Pool",  x = "Year", y = expression("Temperature " ( degree~F))) + scale_x_datetime( breaks = date_breaks("1 year"), labels = date_format("%y"), limits=c(as.POSIXct("2000-01-01"),as.POSIXct("2018-07-01"))) + facet_grid(facet~.) + scale_color_gradient2(low = "blue", high = "red", mid = "yellow", midpoint = 90, breaks= c(80,90,100,110)) 
+LowerTempAll
+
+LowerUpper = plot_grid(UpperTempAll, LowerTempAll)
+LowerUpper
+
+#cooling on or off
+Cooling = ggplot(Results, aes(y=temp, x=date, color=closed, group=closed, shape=closed)) + geom_point( size=2)+ theme_bw(base_size=9) +geom_smooth(size=1.8, alpha=0.3, aes(fill=closed))   + labs(title = NULL,  x = NULL, y = expression("Temperature " ( degree~F))) + scale_x_datetime( breaks = date_breaks("1 year"), labels = date_format("%Y"), limits=c(as.POSIXct("2000-01-01"),as.POSIXct("2017-01-01"))) 
+Cooling
+
+
+#Try and differentiate between open/closed pre 2005 and post-2005
+
+hist(Upper$temp)
+qqnorm(Upper$temp)
+skewness(Upper$temp)
+kurtosis(Upper$temp)
+shapiro.test(Upper$temp)
+
+Pre = subset(Upper, Upper$date < as.Date("2005-01-01"))
+Preclosed = subset(Pre, Pre$closed == "Closed")
+PreOpen = subset(Pre, Pre$closed == "Open")
+
+Precomp = ggplot(Pre, aes(y=temp, x=closed, fill=closed)) + geom_boxplot()  + labs(title = "Upper Pool Temperatures\n Pre-2005",  x = NULL, y = expression("Temperature " ( degree~F))) + scale_y_continuous(limits= c(85,115),breaks=c(85, 90,95,100,105,110, 115), labels = c(85, 90,95,100,105,110, 115))
+Precomp
+
+Post = subset(Upper, Upper$date > as.Date("2005-01-01"))
+Postclosed = subset(Post, Post$closed == "Closed")
+PostOpen = subset(Post, Post$closed == "Open")
+
+Postcomp = ggplot(Post, aes(y=temp, x=closed, fill=closed)) + geom_boxplot() + labs(title = "Upper Pool Temperatures\n Post-2005",  x = NULL, y = expression("Temperature " ( degree~F))) + scale_y_continuous(limits= c(85,115),breaks=c(85, 90,95,100,105,110, 115), labels = c(85, 90,95,100,105,110, 115))
+Postcomp
+
+side = plot_grid(Precomp, Postcomp)
+side
+
+#Boxplots of month
+
+boxplotupper = ggplot(Upper, aes(y=temp, x=facet, fill=facet)) + geom_boxplot()  + labs(title = "Upper Pool Temperatures",  x = NULL, y = expression("Temperature " ( degree~F))) + scale_x_discrete(breaks=c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"), labels = c("J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"))  + theme(legend.title=element_blank()) +  theme(text=element_text(size=12,  family="serif")) + scale_y_continuous(limits= c(83,110),breaks=c(80, 85, 90,95,100,105,110), labels = c(80, 85, 90,95,100,105,110))
+boxplotupper
+
+boxplotlower = ggplot(Lower, aes(y=temp, x=facet, fill=facet)) + geom_boxplot()  + labs(title = "Lower Pool Temperatures",  x = NULL, y = expression("Temperature " ( degree~F))) + scale_x_discrete(breaks=c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"), labels = c("J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"))  + theme(legend.title=element_blank()) +  theme(text=element_text(size=12,  family="serif")) + scale_y_continuous(limits= c(83,110),breaks=c(80, 85, 90,95,100,105,110), labels = c(80, 85, 90,95,100,105,110))
+boxplotlower
+
+box = plot_grid(boxplotupper, boxplotlower)
+box
+
+
+#Linear model
+KeoughsLM <- lm(temp ~ month + pool + cooling + closed, data = Results)
+
+KeoughsLM1 <- lm(temp ~ date + pool + cooling + closed, data = Results)
+
+KeoughsLM2 <- lm(temp ~ doy + pool + cooling + closed, data = Results)
+
+
+Results$Predicted <- predict(KeoughsLM, Results)
+
+Results$residual <- Results$temp - Results$Predicted
+
+ModeledvPredicted <- ggplot(Results, aes(y=temp, x=Predicted, color=pool)) + geom_point() + geom_smooth() + facet_grid(pool~.)
+ModeledvPredicted
+
+
+#Import Handheld Data an tidy 
+Handheld<- read_excel("~/106/2019 Summary Report/2019 Report/Keoughs/LPPSR_Handheld_FY2019.xlsx", 
+                      sheet = "Keoughs")
+Handheld$Date <- as.Date(Handheld$Date)
+
+Handheld <- read_excel("Keoughs/LPPSR_Handheld_FY2019.xlsx", 
+                                    sheet = "Keoughs", col_types = c("date", 
+                                                                      "numeric", "numeric", "numeric", 
+                                                                     "numeric", "numeric", "numeric", 
+                                                                     "numeric", "text", "text", "numeric"))
+View(LPPSR_Handheld_FY2019)
+
+
+Handheld <- filter(Handheld, site != "Flume")
+Handheld <- rename(Handheld, "Temperature" = Temp ,  "Specific Conductivity" = SPC , "Total Dissolved Solids" = TDS, "Salinity" = Sal, "Dissolved Oxygen" = DO, "pH" = pH)
+
+HH1 <- gather(Handheld, 'Temperature', 'Specific Conductivity', 'Total Dissolved Solids', 'Salinity', 'Dissolved Oxygen', 'pH',  key = "date", value = "Parameter")
+
+
+
+#Facet graph of all parameters
+
+HHPlot <- ggplot(HH1, aes(x=Date, y = Parameter, color=site)) +  facet_wrap(date~., scales = "free") + geom_point( size=2)+ theme_bw(base_size=12) +geom_line(size=1.8, alpha=0.4) + scale_x_date(date_labels = "%b") + labs( x= "", y="")
+HHPlot
+
+ggsave("keoughs2019.png", dpi=300, units = "in", width = 10, height = 7.5)
+
+table1 <- xtable(Handheld, auto = TRUE)
+table1

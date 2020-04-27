@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1588015651308.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "FFEA2B4F",
+    "lastKnownWriteTime" : 1582837382,
+    "last_content_update" : 1582837382,
+    "path" : "~/GitHub/Tidy-Tuesdays/2020-02-24/CA_measles.R",
+    "project_path" : "2020-02-24/CA_measles.R",
+    "properties" : {
+        "cursorPosition" : "86,0",
+        "scrollLine" : "66",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 16,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
