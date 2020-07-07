@@ -1,0 +1,32 @@
+{
+    "id": "C57FDD07",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1592968883614.0,
+    "source_on_save": false,
+    "relative_order": 5,
+    "properties": {
+        "expression": "new_elev",
+        "caption": "new_elev",
+        "totalObservations": "17271",
+        "displayedObservations": "17271",
+        "variables": "3",
+        "cacheKey": "2366686F",
+        "object": "new_elev",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=new_elev&cache_key=2366686F&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 4478306662,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1592968883614,
+    "read_only": false,
+    "read_only_alternatives": []
+}

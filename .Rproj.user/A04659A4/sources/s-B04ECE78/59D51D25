@@ -1,0 +1,32 @@
+{
+    "id": "59D51D25",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1592958414340.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "expression": "individuals",
+        "caption": "individuals",
+        "totalObservations": "286",
+        "displayedObservations": "286",
+        "variables": "14",
+        "cacheKey": "A0CB3EF2",
+        "object": "individuals",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=individuals&cache_key=A0CB3EF2&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 140610272500088,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1592958414340,
+    "read_only": false,
+    "read_only_alternatives": []
+}
