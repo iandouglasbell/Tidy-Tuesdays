@@ -1,7 +1,7 @@
 # Tidy-Tuesdays
 My name is Ian Bell. I work in the environmental field and use TidyTuesdays as a way of improving my R and data analysis skills. I usually tweet my code and plots at [@Ian_Bellio](https://twitter.com/Ian_Bellio), and appreciate thoughts on how my code and data visualization could improve.
 
-### [2020-08-03 European Energy(https://github.com/iandouglasbell/Tidy-Tuesdays/tree/master/2020-08-03)
+### [2020-08-03 European Energy](https://github.com/iandouglasbell/Tidy-Tuesdays/tree/master/2020-08-03)
 ![Week 32](https://github.com/iandouglasbell/Tidy-Tuesdays/blob/master/2020-08-03/EnergyTable.png)
 
 ### [2020-04-27 Broadway Trends](https://github.com/iandouglasbell/Tidy-Tuesdays/tree/master/2020-04-27)
