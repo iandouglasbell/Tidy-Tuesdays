@@ -1,0 +1,6 @@
+"0","labels = c('Oxygen','Hydrogen','Carbon_Dioxide','Nitrogen')"
+"0","values = c(4500, 2500, 1053, 500)"
+"0",""
+"0","fig <- plot_ly(type='pie', labels=labels, values=values, textinfo='label+percent',"
+"0","               insidetextorientation='radial')"
+"0","fig"

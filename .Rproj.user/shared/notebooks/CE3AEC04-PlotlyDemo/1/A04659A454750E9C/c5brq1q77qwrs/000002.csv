@@ -1,0 +1,9 @@
+"0","DF <- data.frame(cars)"
+"0",""
+"0","p <- ggplot(DF, aes(x = speed, y = dist)) + geom_point() + geom_smooth(method = ""lm"", se = FALSE) +"
+"0","  stat_cor(label.y = 100) + stat_regline_equation(label.y = 90)"
+"0",""
+"0","fig <- ggplotly(p)"
+"2","`geom_smooth()` using formula 'y ~ x'
+"
+"0","fig"

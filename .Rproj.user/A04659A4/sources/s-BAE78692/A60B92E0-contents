@@ -1,0 +1,64 @@
+#Inyo COVID Cases
+
+library(tidyverse)
+library(lubridate)
+library(patchwork)
+library(gganimate)
+
+COVID <- read_csv("~/Documents/COVID.csv", 
+                  col_types = cols(Date = col_datetime(format = "%m-%d-%Y"))) %>%
+  mutate(proportion = Positive/Total)
+
+#national data
+
+national <- read_csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us.csv")
+
+#state
+
+state <- read_csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv") %>%
+  filter(state == "California")
+
+#eastern sierra
+
+county <- read_csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv") %>%
+  filter(county == "Inyo" | county == "Mono") %>%
+  group_by(date)
+  summarise(cases = sum(cases)) 
+
+mutate(date_col = date(date)) %>%
+
+%>%
+  add_row(date_col = as.Date("2020-01-25"), cases = as.double("0"))
+
+inyo <- county <- read_csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv") %>%
+  filter(county == "Inyo")
+
+# Positive tests
+
+nat_plot <- ggplot(national, aes(date, cases)) + geom_line(size=1.5) + theme_minimal()
+nat_plot
+
+state_plot <- ggplot(state, aes(date, cases)) + geom_line() + theme_minimal()
+state_plot
+
+eastern_sirra_plot <- ggplot(county , aes(date, cases, color = county)) + geom_line(size=1.2) + theme_linedraw(base_size = 16) + labs(x="", y="", title = "Eastern Sierra CA COVID-19", subtitle = "Inyo Co and Mono Co positive cases", caption = "Data: New York Times") + scale_x_date(date_breaks = "1 month", date_labels = "%b")
+eastern_sirra_plot
+
+ggsave("")
+
+inyo_plot <- ggplot(inyo, aes(date, cases)) + geom_step(color= "red", size=1.2) + theme_minimal(base_size = 16) + labs(x="", y="", title = "Inyo Co Positive COVID-19 Cases")
+inyo_plot
+
+final <- nat_plot/state_plot/eastern_sirra_plot
+final
+
+Inyo_testing <- ggplot(COVID) + geom_line(aes(Date, Total)) + geom_line(aes(Date, Positive))
+Inyo_testing
+
+Inyo_testing <- ggplot(COVID) + geom_line(aes(Date, proportion))
+Inyo_testing
+
+eastern_sirra_plot_animated <- ggplot(county , aes(date, cases, color = county)) + geom_line(size=1.2) + theme_linedraw(base_size = 16) + labs(x="", y="", title = "Eastern Sierra CA COVID-19", subtitle = "Inyo Co and Mono Co positive cases", caption = "Data: New York Times") + scale_x_date(date_breaks = "1 month", date_labels = "%b") + transition_reveal(date) + geom_point(size=2)
+eastern_sirra_plot_animated
+
+anim_save("20200816.gif")
