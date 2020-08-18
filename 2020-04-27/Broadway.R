@@ -86,7 +86,7 @@ tckt_price
 
 #Chart of number of broadway plays
 n_plays <- ggplot(number_plays, aes(x=year, y=number)) + 
-  geom_point(size=3, color = "#FF0054") +
+  geom_line(size=2, color = "#FF0054") +
   theme_minimal() +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
   theme(panel.grid.major.y = element_line(size = 0.5, linetype = 'dashed', colour = "black")) +
@@ -102,3 +102,4 @@ combined + plot_annotation(
 )
 
 ggsave("Broadway.png", dpi = 300, width = 9.5, height = 8, units = "in")
+  

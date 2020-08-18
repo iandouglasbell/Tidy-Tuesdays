@@ -1,9 +1,9 @@
 {
-    "path" : "~/GitHub/Tidy-Tuesdays/2020-03-03",
-    "sortOrder" : [
+    "path": "~/GitHub/Tidy-Tuesdays/2020-03-03",
+    "sortOrder": [
         {
-            "ascending" : true,
-            "columnIndex" : 2
+            "ascending": true,
+            "columnIndex": 2
         }
     ]
 }
