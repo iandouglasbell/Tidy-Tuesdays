@@ -16,6 +16,7 @@ View(foia_150k_plus)
 #Wrangle
 
 CDs <- st_read('tl_2018_us_cd116/tl_2018_us_cd116.shp')
+CDs <- st_crop(CDS, c(xmin=-194, xmax=-63, ymin=20, ymax=77))
 
 CD_plot <- ggplot(CDs) + geom_sf()
 CD_plot

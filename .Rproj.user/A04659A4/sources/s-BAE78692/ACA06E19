@@ -1,0 +1,32 @@
+{
+    "id": "ACA06E19",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1595882499605.0,
+    "source_on_save": false,
+    "relative_order": 10,
+    "properties": {
+        "expression": "penguins_raw.csv",
+        "caption": "penguins_raw.csv",
+        "totalObservations": 344,
+        "displayedObservations": 344,
+        "variables": 17,
+        "cacheKey": "196B3B5E",
+        "object": "penguins_raw.csv",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=penguins_raw.csv&cache_key=196B3B5E&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 0,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1595882499605,
+    "read_only": false,
+    "read_only_alternatives": []
+}

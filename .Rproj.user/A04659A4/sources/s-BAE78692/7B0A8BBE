@@ -1,0 +1,32 @@
+{
+    "id": "7B0A8BBE",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1594671784580.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "expression": "astronauts",
+        "caption": "astronauts",
+        "totalObservations": 1277,
+        "displayedObservations": 1277,
+        "variables": 24,
+        "cacheKey": "74D1A01E",
+        "object": "astronauts",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=astronauts&cache_key=74D1A01E&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 0,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1594671784580,
+    "read_only": false,
+    "read_only_alternatives": []
+}
