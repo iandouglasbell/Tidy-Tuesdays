@@ -1,0 +1,36 @@
+#Crops
+#Tidy Tuesday 
+#Ian Bell September 1 2020
+
+library(tidyverse)
+library(janitor)
+
+# DATA
+key_crop_yields <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-01/key_crop_yields.csv')
+fertilizer <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-01/cereal_crop_yield_vs_fertilizer_application.csv')
+tractors <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-01/cereal_yields_vs_tractor_inputs_in_agriculture.csv')
+land_use <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-01/land_use_vs_yield_change_in_cereal_production.csv')
+arable_land <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-01/arable_land_pin.csv')
+
+
+
+
+
+#TIDY
+
+fert <- fertilizer %>%
+  clean_names()
+
+land <- arable_land %>%
+  clean_names()
+
+land_fert <- fert %>%
+  inner_join(land, by = c("code", "year"))
+
+#PLOT
+
+fert_rough <- ggplot(fert, aes(x= cereal_yield_tonnes_per_hectare, y= nitrogen_fertilizer_use_kilograms_per_hectare)) + geom_point() + geom_smooth()
+fert_rough
+
+land_fert_rough <- ggplot(land_fert, aes(x=year, y= arable_land_needed_to_produce_a_fixed_quantity_of_crops_1_0_1961)) + geom_point()
+land_fert_rough
