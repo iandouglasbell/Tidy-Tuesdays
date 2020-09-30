@@ -1,0 +1,32 @@
+{
+    "id": "E73D522B",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1598298122420.0,
+    "source_on_save": false,
+    "relative_order": 16,
+    "properties": {
+        "expression": "chopped",
+        "caption": "chopped",
+        "totalObservations": "569",
+        "displayedObservations": "569",
+        "variables": "21",
+        "cacheKey": "795940CF",
+        "object": "chopped",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=chopped&cache_key=795940CF&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 0,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1598298122420,
+    "read_only": false,
+    "read_only_alternatives": []
+}

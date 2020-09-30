@@ -1,0 +1,32 @@
+{
+    "id": "9371AC95",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1601425818370.0,
+    "source_on_save": false,
+    "relative_order": 24,
+    "properties": {
+        "expression": "AMS_ht",
+        "caption": "AMS_ht",
+        "totalObservations": 415,
+        "displayedObservations": 415,
+        "variables": 21,
+        "cacheKey": "F59BA773",
+        "object": "AMS_ht",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=AMS_ht&cache_key=F59BA773&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 0,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1601425818370,
+    "read_only": false,
+    "read_only_alternatives": []
+}

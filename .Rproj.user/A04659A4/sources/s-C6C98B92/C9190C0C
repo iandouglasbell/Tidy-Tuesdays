@@ -12,14 +12,14 @@
     "properties": {
         "expression": "county",
         "caption": "county",
-        "totalObservations": 293,
-        "displayedObservations": 293,
-        "variables": 6,
-        "cacheKey": "960286B0",
+        "totalObservations": "295",
+        "displayedObservations": "295",
+        "variables": "6",
+        "cacheKey": "D41293C6",
         "object": "county",
         "environment": "",
-        "contentUrl": "grid_resource/gridviewer.html?env=&obj=county&cache_key=960286B0&max_cols=50",
-        "preview": 0
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=county&cache_key=D41293C6&max_cols=50",
+        "preview": "0"
     },
     "folds": "",
     "lastKnownWriteTime": 23,

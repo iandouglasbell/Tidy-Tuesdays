@@ -1,0 +1,32 @@
+{
+    "id": "07094A75",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1598390661212.0,
+    "source_on_save": false,
+    "relative_order": 21,
+    "properties": {
+        "expression": "chopped3",
+        "caption": "chopped3",
+        "totalObservations": 5,
+        "displayedObservations": 5,
+        "variables": 20,
+        "cacheKey": "8A8CDB2F",
+        "object": "chopped3",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=chopped3&cache_key=8A8CDB2F&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 31525674139779169,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1598390661212,
+    "read_only": false,
+    "read_only_alternatives": []
+}

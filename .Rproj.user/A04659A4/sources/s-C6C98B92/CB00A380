@@ -1,0 +1,32 @@
+{
+    "id": "CB00A380",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1601423580800.0,
+    "source_on_save": false,
+    "relative_order": 22,
+    "properties": {
+        "expression": "peaks",
+        "caption": "peaks",
+        "totalObservations": "468",
+        "displayedObservations": "468",
+        "variables": "8",
+        "cacheKey": "D3871FD1",
+        "object": "peaks",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=peaks&cache_key=D3871FD1&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 3472891254757487713,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1601423580800,
+    "read_only": false,
+    "read_only_alternatives": []
+}
