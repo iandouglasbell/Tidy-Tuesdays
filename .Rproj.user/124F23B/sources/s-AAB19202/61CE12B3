@@ -1,0 +1,32 @@
+{
+    "id": "61CE12B3",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1599005270736.0,
+    "source_on_save": false,
+    "relative_order": 15,
+    "properties": {
+        "expression": "land",
+        "caption": "land",
+        "totalObservations": 11280,
+        "displayedObservations": 11280,
+        "variables": 4,
+        "cacheKey": "1C90C147",
+        "object": "land",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=land&cache_key=1C90C147&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1203684344400,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1599005270736,
+    "read_only": false,
+    "read_only_alternatives": []
+}
