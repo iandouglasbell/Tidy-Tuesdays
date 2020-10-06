@@ -1,6 +1,12 @@
 # Tidy-Tuesdays
 My name is Ian Bell. I work in the environmental field and use TidyTuesdays as a way of improving my R and data analysis skills. I usually tweet my code and plots at [@Ian_Bellio](https://twitter.com/Ian_Bellio), and always appreciate thoughts on how my code and data visualization could improve!
 
+### [2020-09-29 Climbing](https://github.com/iandouglasbell/Tidy-Tuesdays/tree/master/2020-09-29)
+![Week 38](https://github.com/iandouglasbell/Tidy-Tuesdays/blob/master/2020-09-29/climbing.png)
+
+### [2020-09-09 FRIENDS](https://github.com/iandouglasbell/Tidy-Tuesdays/tree/master/2020-09-08)
+![Week 37](https://github.com/iandouglasbell/Tidy-Tuesdays/blob/master/2020-09-08/FriendsPlot.png)
+
 ### [2020-08-18 Extinct Plants](https://github.com/iandouglasbell/Tidy-Tuesdays/tree/master/2020-08-18)
 ![Week 34](https://github.com/iandouglasbell/Tidy-Tuesdays/blob/master/2020-08-18/plant_extinctions.png)
 

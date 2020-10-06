@@ -59,6 +59,6 @@ Inyo_testing <- ggplot(COVID) + geom_line(aes(Date, proportion))
 Inyo_testing
 
 eastern_sirra_plot_animated <- ggplot(county , aes(date, cases, color = county)) + geom_line(size=1.2) + theme_linedraw(base_size = 16) + labs(x="", y="", title = "Eastern Sierra CA COVID-19", subtitle = "Inyo Co and Mono Co positive cases", caption = "Data: New York Times") + scale_x_date(date_breaks = "1 month", date_labels = "%b") + transition_reveal(date) + geom_point(size=2)
-eastern_sirra_plot_animated
+animate(eastern_sirra_plot_animated, end_pause = 30)
 
-anim_save("20200816.gif")
+anim_save("20200821.gif")

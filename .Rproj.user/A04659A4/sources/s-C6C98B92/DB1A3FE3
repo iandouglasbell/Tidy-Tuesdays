@@ -1,0 +1,32 @@
+{
+    "id": "DB1A3FE3",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1598317346741.0,
+    "source_on_save": false,
+    "relative_order": 19,
+    "properties": {
+        "expression": "chopped_locations",
+        "caption": "chopped_locations",
+        "totalObservations": 3,
+        "displayedObservations": 3,
+        "variables": 22,
+        "cacheKey": "C5D032F6",
+        "object": "chopped_locations",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=chopped_locations&cache_key=C5D032F6&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 32651234744139886,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1598317346741,
+    "read_only": false,
+    "read_only_alternatives": []
+}
