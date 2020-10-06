@@ -5,6 +5,7 @@
 library(tidyverse)
 library(showtext)
 library(ggtext)
+library(Cairo)
 
 #Data
 friends <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-08/friends.csv')
@@ -22,9 +23,20 @@ friend <- friends %>%
 
 #Viz
 
+trace(grDevices:::png, quote({
+  if (missing(type) && missing(antialias)) {
+    type <- "cairo-png"
+    antialias <- "subpixel"
+  }
+}), print = FALSE)
+
+opts_chunk$set(dev="png", 
+               dev.args=list(type="cairo"),
+               dpi=300)
+
 coffee <- ggplot() +
-  geom_point(data = friend, aes(x=episode, y=season), size = 8, color = "mediumblue", shape = 19) +
-  geom_point(data = friends, aes(x=episode, y=season), size = 8, color = "mediumblue", shape = 1) +
+  geom_point(data = friend, aes(x=episode, y=season), size = 8, color = "mediumblue", shape = 19, stroke = 1, fill = "mediumblue") +
+  geom_point(data = friends, aes(x=episode, y=season), size = 8, color = "mediumblue", shape = 1, stroke = 1,) +
   scale_y_reverse(breaks = c(1,2,3,4,5,6,7,8,9,10)) +
   scale_x_continuous(breaks = c(5,10,15,20,25)) +
   theme_minimal(base_size = 20, base_family = "muli") +
@@ -42,3 +54,6 @@ coffee <- ggplot() +
       fill = "honeydew"))
 coffee
 
+ggsave("coffee.png",  dpi = 400)
+Cairo("coffee1.png", width = 8, height = 9.5, units = "in", dpi = 300)
+Cairo(600, 600, file="plot.png", type="png", bg="white")
