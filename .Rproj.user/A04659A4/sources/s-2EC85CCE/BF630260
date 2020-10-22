@@ -1,0 +1,32 @@
+{
+    "id": "BF630260",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1603229540873.0,
+    "source_on_save": false,
+    "relative_order": 25,
+    "properties": {
+        "expression": "locations",
+        "caption": "locations",
+        "totalObservations": "1448",
+        "displayedObservations": "1448",
+        "variables": "15",
+        "cacheKey": "85918D57",
+        "object": "locations",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=locations&cache_key=85918D57&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 4466849606,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1603229540873,
+    "read_only": false,
+    "read_only_alternatives": []
+}

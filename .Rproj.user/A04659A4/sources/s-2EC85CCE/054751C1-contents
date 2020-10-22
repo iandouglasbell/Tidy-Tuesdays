@@ -1,0 +1,190 @@
+---
+title: "Top 5 Most Common Tree Types in San Francisco"
+output:
+    prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+    fig_width: 4
+---
+
+By Ian Bell • Twitter: [Ian_Bellio](https://twitter.com/Ian_Bellio) • January 2020
+
+This page highlights the top five most common genera of tree in the city limits of San Franciso, according to the City of San Francisco tree census.[^1] All the information on this page was generated from the city database. Click the points on the maps below to explore individual species in each genera, sizes (expressed as inches in diameter at breast height (DBH)), and dates planted.
+
+***
+
+```{r setup, include=FALSE, warning = FALSE}
+library(tidyverse)
+library(rgdal)
+library(prettydoc)
+library(leaflet)
+library(knitr)
+
+sf_trees <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-01-28/sf_trees.csv')
+
+top_genus <- sf_trees %>%
+  mutate(Genus = word(species, 1)) %>%
+  filter(Genus != "Tree(s)") %>%
+  count(Genus) %>%
+  arrange(desc(n)) %>%
+  top_n(5,n) 
+
+Prunus <- sf_trees %>%
+  mutate(Genus = word(species, 1)) %>%
+  filter(Genus == "Prunus" )
+
+Platanus <- sf_trees %>%
+  mutate(Genus = word(species, 1)) %>%
+  filter(Genus == "Platanus") %>%
+  filter(tree_id != 27884) #bad longitude
+
+Ficus <- sf_trees %>%
+  mutate(Genus = word(species, 1)) %>%
+  filter( Genus == "Ficus")
+
+Pittosporum <- sf_trees %>%
+  mutate(Genus = word(species, 1)) %>%
+  filter( Genus == "Pittosporum")
+
+Tristaniopsis <- sf_trees %>%
+  mutate(Genus = word(species, 1)) %>%
+  filter( Genus == "Tristaniopsis")
+
+
+
+```
+
+<style> 
+p.caption {
+  font-size: 0.6em;
+}
+
+.html-widget {
+    margin: auto;
+}
+</style>
+
+
+## 1. Fruit Trees (*Prunus*)
+
+```{r fruit, dpi=36, out.width = "50%",echo=FALSE, warning=FALSE,  message=FALSE, fig.align="center", fig.cap="Cherry Photo: Myrabella / Wikimedia Commons"}
+include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Cerisier_du_Japon_Prunus_serrulata.jpg/640px-Cerisier_du_Japon_Prunus_serrulata.jpg") 
+```
+
+The most common type of tree in San Francisco are fruit trees of the genus *Prunus*. These include many types of fruit trees, including ornamental species. According to the data, there are `r count(Prunus)` trees of this genus in the city limits. The oldest tree of this type on record in the database was planted in `r format(min(Prunus$date, na.rm=TRUE), '%B %Y')` and is `r sprintf ("%.1f", as.double(Sys.Date() - min(Prunus$date, na.rm=TRUE))/365)` years old. Trees of this type are dense in the areas of the city around Twin Peaks, such as Noe Valley, the Castro, and Forest Hill.
+
+
+```{r prunus, echo=FALSE, warning=FALSE,  message=FALSE, fig.align="center", fig.cap="Fruit Trees in SF"}
+prunus_map <- leaflet() %>%
+  addProviderTiles(providers$Stamen.Terrain) %>%  
+  addCircleMarkers(data=Prunus,
+                       stroke = FALSE, fillOpacity = 0.5, radius=3,
+                       popup=~paste("<strong>Species:</strong>",species,
+                       "<br>",
+                       "<strong>Date Planted:</strong>",date,
+                       "<br>",
+                       "<strong>DBH:</strong>",dbh))
+prunus_map
+
+```
+***
+## 2. *Platanus* 
+
+```{r platanus pic, dpi=36, out.width = "50%",echo=FALSE, warning=FALSE,  message=FALSE, fig.align="center", fig.cap="English sycamore Photo: Maatpublishing [CC BY-SA]"}
+include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Hethert_tree.jpg/511px-Hethert_tree.jpg") 
+```
+
+Some of the most common species of the *Platanus* genus include the London plane and American sycamore. According to the data, there are `r count(Platanus)` trees of this genus in the city limits. The oldest tree of this type on record in the database was planted in `r format(min(Platanus$date, na.rm=TRUE), '%B %Y')` and is `r sprintf ("%.1f", as.double(Sys.Date() - min(Platanus$date, na.rm=TRUE))/365)` years old. These trees line some of the major streets in the City of San Francisco, such as Market Street, California Street, and Van Ness Avenue. 
+
+```{r plantanus, echo=FALSE, warning=FALSE, message=FALSE, fig.align="center", fig.cap="*Platanus* Trees in SF"}
+plantanus_map <- leaflet() %>%
+  addProviderTiles(providers$Stamen.Terrain) %>%  
+  addCircleMarkers(data=Platanus,
+                       stroke = FALSE, fillOpacity = 0.5, radius=3, color = "red",
+                       popup=~paste("<strong>Species:</strong>",species,
+                       "<br>",
+                       "<strong>Date Planted:</strong>",date,
+                       "<br>",
+                       "<strong>DBH:</strong>",dbh))
+plantanus_map
+
+```
+
+***
+## 3. Fig Trees (*Ficus*)
+
+```{r fig pic, dpi=36, out.width = "50%",echo=FALSE, warning=FALSE,  message=FALSE, fig.align="center", fig.cap="Ficus Tree Photo: Forest &amp; Kim Starr [CC BY (https://creativecommons.org/licenses/by/3.0)]"}
+include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Starr_031108-0130_Ficus_lyrata.jpg/640px-Starr_031108-0130_Ficus_lyrata.jpg") 
+```
+
+The third most common genus of tree in the city is *Ficus*, more commonly known as Fig trees. According to the data, there are `r count(Ficus)` trees of this genus in the city limits. The oldest tree of this type on record in the database was planted in `r format(min(Ficus$date, na.rm=TRUE), '%B %Y')` and is `r sprintf ("%.1f", as.double(Sys.Date() - min(Ficus$date, na.rm=TRUE))/365)` years old. The northeast portion of the City near the Financial District has many Fig trees.
+
+```{r ficus, echo=FALSE, warning=FALSE, cache=TRUE, message=FALSE, fig.align="center", fig.cap="Fig Trees in SF"}
+ficus_map <- leaflet() %>%
+  addProviderTiles(providers$Stamen.Terrain) %>%  
+  addCircleMarkers(data=Ficus,
+                       stroke = FALSE, fillOpacity = 0.5, radius=3, color = "darkorange",
+                       popup=~paste("<strong>Species:</strong>",species,
+                       "<br>",
+                       "<strong>Date Planted:</strong>",date,
+                       "<br>",
+                       "<strong>DBH:</strong>",dbh))
+ficus_map
+
+```
+
+***
+
+## 4. *Pittosporum* (Cheesewood)
+
+```{r Box pic, dpi=36, out.width = "50%",echo=FALSE, warning=FALSE,  message=FALSE, fig.align="center", fig.cap="Victorian Box tree Photo: Friends of the Urban Forest"}
+include_graphics("https://www.fuf.net/wp-content/uploads/2012/10/AA.-Pittosporum-undu.-treeAdam.jpg") 
+```
+
+Some of the most common species of the *Pittosporum* genus in San Francisco include the Victorian Box and Karo tree. These are flowering trees, and are known as Cheesewoods. According to the data, there are `r count(Pittosporum)` trees of this genus in the city limits. The oldest tree of this type on record in the database was planted in `r format(min(Pittosporum$date, na.rm=TRUE), '%B %Y')` and is `r sprintf ("%.1f", as.double(Sys.Date() - min(Pittosporum$date, na.rm=TRUE))/365)` years old.  
+
+```{r Pittosporum, echo=FALSE, warning=FALSE, cache=TRUE, message=FALSE, fig.align="center", fig.cap="*Pittosporum* Trees in SF"}
+Pittosporum_map <- leaflet() %>%
+  addProviderTiles(providers$Stamen.Terrain) %>%  
+  addCircleMarkers(data=Pittosporum,
+                       stroke = FALSE, fillOpacity = 0.5, radius=3, color = "green",
+                       popup=~paste("<strong>Species:</strong>",species,
+                       "<br>",
+                       "<strong>Date Planted:</strong>",date,
+                       "<br>",
+                       "<strong>DBH:</strong>",dbh))
+Pittosporum_map
+
+```
+
+***
+
+## 5. *Tristaniopsis* (Myrtle)
+
+```{r Tristaniopsis pic, dpi=36, out.width = "50%",echo=FALSE, warning=FALSE,  message=FALSE, fig.align="center", fig.cap="Water Gum tree (*Tristaniopsis laurina*) Photo: Eug / Wikimedia Commons"}
+include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Tristaniopsis_laurina-tree.jpg/360px-Tristaniopsis_laurina-tree.jpg") 
+```
+
+The fifth most common genus is *Tristaniopsis*, which is in the myrtle family. One of the more common species in San Francisco in this genus is the Swamp Myrtle. According to the data, there are `r count(Tristaniopsis)` trees of this genus in the city limits. The oldest tree of this type on record in the database was planted in `r format(min(Tristaniopsis$date, na.rm=TRUE), '%B %Y')` and is `r sprintf ("%.1f", as.double(Sys.Date() - min(Tristaniopsis$date, na.rm=TRUE))/365)` years old. These trees have a broad distribution around the city.
+
+```{r Tristaniopsis, echo=FALSE, warning=FALSE, cache=TRUE, message=FALSE, fig.align="center", fig.cap="*Tristaniopsis* Trees in SF"}
+Tristaniopsis_map <- leaflet() %>%
+  addProviderTiles(providers$Stamen.Terrain) %>%  
+  addCircleMarkers(data=Tristaniopsis,
+                       stroke = FALSE, fillOpacity = 0.5, radius=3, color = "purple",
+                       popup=~paste("<strong>Species:</strong>",species,
+                       "<br>",
+                       "<strong>Date Planted:</strong>",date,
+                       "<br>",
+                       "<strong>DBH:</strong>",dbh))
+Tristaniopsis_map
+
+```
+
+***
+
+R Markdown Code used to produce this webpage can be viewed at
+
+This is fun product for #TidyTuesday, a weekly social data project focused on using R programming language tidyverse packages to clean, wrangle, tidy, and plot a new dataset every Tuesday.  Thanks to Yan Holtz and his [Pimp my RMD: a few tips for R markdown](https://holtzy.github.io/Pimp-my-rmd/) for helpful tips.
+
+[^1]: DataSF Street Tree List <https://data.sfgov.org/City-Infrastructure/Street-Tree-List/tkzw-k3nq>
