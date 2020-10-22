@@ -1,23 +1,24 @@
+
 ---
-title: "Beer Gold Medals"
-output: html_document
+output: 
+  html_document:
+    theme: sandstone
 editor_options: 
   chunk_output_type: inline
 ---
 
-# Could You *Reasonably* Drive to a Gold Medal-Winning Brewery for Dinner Tonight?
+# Could You *Reasonably* Drive to a Gold Medal-Winning Brewery right now?
 
 By Ian Bell • Twitter: [Ian_Bellio](https://twitter.com/Ian_Bellio) • October 2020
 
-Below is a map of all the American breweries that have won a Gold Medal for one of their beers from the Great American Beer Festival. I have added a blue 50-mile buffer, which is what I figure to be a *reasonable* distance to drive for some delicious **GOLD MEDAL** beer once in a while. Your mileage may vary. 
+Below is a map of all the American breweries that have won a Gold Medal for one of their beers from the Great American Beer Festival. I have added a blue 50-mile buffer, which is what I figure to be a *reasonable* distance to drive for some delicious beer once in a while. Your mileage may vary. 
 
-Click on each city below to find the local breweries that have won a gold. Locations are approximate. 
+Click on each city below to find the local breweries that have won a gold. Locations are approximate based on the listed home city of each brewery. 
 
-```{r beer, echo=FALSE, warning=FALSE, cache=TRUE, message=FALSE, fig.align="center"}
+```{r beer, echo=FALSE, fig.align="center", message=FALSE, warning=FALSE, cache=FALSE}
 library(tidyverse)
 library(glue)
 library(leaflet)
-library(geobuffer)
 library(sf)
 
 #DATA
@@ -32,12 +33,12 @@ locations <- inner_join(beer_awards, us_cities_states_counties, by = c("state" =
   distinct(medal, beer_name, brewery, city, state, .keep_all = TRUE) %>%
   filter(medal == "Gold") %>%
   group_by(LATITUDE, LONGITUDE) %>%
-  mutate(all_pubs = paste(unique(brewery), collapse = ", "), all_beers = paste(beer_name, collapse = ", "), all_years = paste(year, collapse = ", "))
+  mutate(all_pubs = paste(unique(brewery), collapse = ", "))
 
 cities <- st_as_sf(locations, coords=c("LONGITUDE", "LATITUDE"), crs = 4326) %>%
   st_transform(crs = 7801)
 
-buffer_1km <- st_buffer(cities, 80467) %>%
+buffer_50mi <- st_buffer(cities, 80467) %>%
   st_union() %>%
   st_cast("POLYGON") %>%
   st_transform(crs = 4326)
@@ -47,7 +48,7 @@ buffer_1km <- st_buffer(cities, 80467) %>%
 map <- leaflet(width = "100%") %>%
   addMeasure(primaryLengthUnit = "meters") %>%
   addTiles() %>%
-  addPolygons(data = buffer_1km) %>%
+  addPolygons(data = buffer_50mi) %>%
   addCircleMarkers(data = locations, ~LONGITUDE, ~LATITUDE, fillOpacity = 0.5, radius=2, color = "purple",
                    popup=~paste("<strong>City:</strong>", city, state,
                                 "<br>",
@@ -55,29 +56,107 @@ map <- leaflet(width = "100%") %>%
 map
 ```
 
-```{r test, echo=FALSE}
+<details><summary>Click here for map R code</summary>
 
-library(DT)
-library(htmltools)
-library(htmlwidgets)
-library(webshot)
+```{r beer2, echo=TRUE, fig.align="center", message=FALSE, warning=FALSE, cache=FALSE}
+library(tidyverse)
+library(leaflet)
+library(sf)
 
+#DATA
 beer_awards <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-10-20/beer_awards.csv')
 
+us_cities_states_counties <- read_csv('https://raw.githubusercontent.com/kelvins/US-Cities-Database/main/csv/us_cities.csv')
+
+#TIDY
+
+locations <- inner_join(beer_awards, us_cities_states_counties, by = c("state" = "STATE_CODE" , "city" = "CITY")) %>%
+  distinct(medal, beer_name, brewery, city, state, .keep_all = TRUE) %>%
+  filter(medal == "Gold") %>%
+  group_by(LATITUDE, LONGITUDE) %>%
+  mutate(all_pubs = paste(unique(brewery), collapse = ", "))
+
+cities <- st_as_sf(locations, coords=c("LONGITUDE", "LATITUDE"), crs = 4326) %>%
+  st_transform(crs = 7801)
+
+buffer_50mi <- st_buffer(cities, 80467) %>%
+  st_union() %>%
+  st_cast("POLYGON") %>%
+  st_transform(crs = 4326)
+
+#PLOT
+
+map <- leaflet(width = "100%") %>%
+  addMeasure(primaryLengthUnit = "meters") %>%
+  addTiles() %>%
+  addPolygons(data = buffer_50mi) %>%
+  addCircleMarkers(data = locations, ~LONGITUDE, ~LATITUDE, fillOpacity = 0.5, radius=2, color = "purple",
+                   popup=~paste("<strong>City:</strong>", city, state,
+                                "<br>",
+                                "<strong>Gold Medal Brewery:</strong>",all_pubs))
+```
+
+
+</details>
+
+---
+
+### Data table
+
+Below is a table of every gold, silver, and bronze medal-winning beer from the Festival. 
+
+
+```{r beertable, echo=FALSE, message=FALSE, warning=FALSE, cache=FALSE}
+
+library(DT)
+library(htmlwidgets)
+
+
+beer_awards <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-10-20/beer_awards.csv')
 
 
 table <- datatable(beer_awards, extensions = c("Buttons" , "FixedColumns"),
            filter = 'top',
            options = list( autoWidth = TRUE , 
                            dom = 'Blftip',
-                           pageLength = 100,
+                           pageLength = 15,
                            searchHighlight = FALSE,
                            buttons = c('copy', 'csv', 'print'),
                            scrollX = TRUE,
                            fixedColumns = list(leftColumns = 2)),
            class = c('compact cell-border stripe hover') ,
            rownames = FALSE)
-knitr::knit_print(table)
+table
 ```
 
 
+<details><summary>Click here for table R code</summary>
+
+
+```{r table, echo=TRUE, message=FALSE, warning=FALSE, cache=FALSE}
+
+library(DT)
+library(htmlwidgets)
+
+beer_awards <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-10-20/beer_awards.csv')
+
+table <- datatable(beer_awards, extensions = c("Buttons" , "FixedColumns"),
+           filter = 'top',
+           options = list( autoWidth = TRUE , 
+                           dom = 'Blftip',
+                           pageLength = 20,
+                           searchHighlight = FALSE,
+                           buttons = c('copy', 'csv', 'print'),
+                           scrollX = TRUE,
+                           fixedColumns = list(leftColumns = 2)),
+           class = c('compact cell-border stripe hover') ,
+           rownames = FALSE)
+table
+```
+
+
+</details>
+
+---
+
+This project's data comes from the [Great American Beer Festival](https://www.greatamericanbeerfestival.com/the-competition/winners/). This map is a weekly contribution to the [TidyTuesday weekly data project in R](https://github.com/rfordatascience/tidytuesday) to practice R coding skills.  
