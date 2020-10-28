@@ -1,6 +1,10 @@
 # Tidy-Tuesdays
 My name is Ian Bell. I work in the environmental field and use TidyTuesdays as a way of improving my R and data analysis skills. I usually tweet my code and plots at [@Ian_Bellio](https://twitter.com/Ian_Bellio), and always appreciate thoughts on how my code and data visualization could improve!
 
+
+### [2020-10-20 Beer Awards (RMarkdown webpage)](https://iandouglasbell.github.io/Beer.html)
+![Week 42](https://github.com/iandouglasbell/Tidy-Tuesdays/blob/master/2020-10-20/beergif.gif)
+
 ### [2020-10-06 NCAA Women's Basketball](https://github.com/iandouglasbell/Tidy-Tuesdays/tree/master/2020-10-06)
 ![Week 40](https://github.com/iandouglasbell/Tidy-Tuesdays/blob/master/2020-10-06/NCAA_bball.png)
 
