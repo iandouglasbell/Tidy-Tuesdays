@@ -1,0 +1,32 @@
+{
+    "id": "32514AE2",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1603742216867.0,
+    "source_on_save": false,
+    "relative_order": 30,
+    "properties": {
+        "expression": "bishop_freeze",
+        "caption": "bishop_freeze",
+        "totalObservations": "76",
+        "displayedObservations": "76",
+        "variables": "7",
+        "cacheKey": "28ADF707",
+        "object": "bishop_freeze",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=bishop_freeze&cache_key=28ADF707&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1603742098,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1603742216867,
+    "read_only": false,
+    "read_only_alternatives": []
+}

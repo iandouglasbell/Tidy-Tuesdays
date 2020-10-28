@@ -1,0 +1,32 @@
+{
+    "id": "B27ECB6D",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1603853458533.0,
+    "source_on_save": false,
+    "relative_order": 32,
+    "properties": {
+        "expression": "freeze_days",
+        "caption": "freeze_days",
+        "totalObservations": 10846,
+        "displayedObservations": 10846,
+        "variables": 50,
+        "cacheKey": "821C9230",
+        "object": "freeze_days",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=freeze_days&cache_key=821C9230&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 140544871714552,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1603853458533,
+    "read_only": false,
+    "read_only_alternatives": []
+}

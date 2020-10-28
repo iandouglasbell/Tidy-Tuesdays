@@ -1,0 +1,32 @@
+{
+    "id": "FC0B255D",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1603730383986.0,
+    "source_on_save": false,
+    "relative_order": 29,
+    "properties": {
+        "expression": "bishop",
+        "caption": "bishop",
+        "totalObservations": 34240,
+        "displayedObservations": 34240,
+        "variables": 41,
+        "cacheKey": "62A0F02C",
+        "object": "bishop",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=bishop&cache_key=62A0F02C&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 4509611846,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1603730383986,
+    "read_only": false,
+    "read_only_alternatives": []
+}
