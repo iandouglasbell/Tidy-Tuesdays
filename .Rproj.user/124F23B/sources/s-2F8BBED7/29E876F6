@@ -1,0 +1,33 @@
+{
+    "id": "29E876F6",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1599004782723.0,
+    "source_on_save": false,
+    "relative_order": 13,
+    "properties": {
+        "expression": "fert",
+        "caption": "fert",
+        "totalObservations": 11965,
+        "displayedObservations": 11965,
+        "variables": 5,
+        "cacheKey": "70014482",
+        "object": "fert",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=fert&cache_key=70014482&max_cols=50",
+        "preview": 0,
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1599004121,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1599004782723,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -1,0 +1,33 @@
+{
+    "id": "E9686DA3",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1599005317231.0,
+    "source_on_save": false,
+    "relative_order": 15,
+    "properties": {
+        "expression": "land_fert",
+        "caption": "land_fert",
+        "totalObservations": 73200,
+        "displayedObservations": 73200,
+        "variables": 7,
+        "cacheKey": "628A5B5A",
+        "object": "land_fert",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=land_fert&cache_key=628A5B5A&max_cols=50",
+        "preview": 0,
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 2843587084549317740,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1599005317231,
+    "read_only": false,
+    "read_only_alternatives": []
+}

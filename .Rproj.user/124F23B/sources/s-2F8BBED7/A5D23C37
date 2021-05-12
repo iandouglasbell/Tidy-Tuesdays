@@ -1,0 +1,33 @@
+{
+    "id": "A5D23C37",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1596486073106.0,
+    "source_on_save": false,
+    "relative_order": 12,
+    "properties": {
+        "cacheKey": "F498C654",
+        "caption": "country_total",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=country_total&cache_key=F498C654&max_cols=50",
+        "displayedObservations": "10",
+        "environment": "",
+        "expression": "country_total",
+        "object": "country_total",
+        "preview": "0",
+        "totalObservations": "10",
+        "variables": "9",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 3180141919958494821,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1596486073106,
+    "read_only": false,
+    "read_only_alternatives": []
+}

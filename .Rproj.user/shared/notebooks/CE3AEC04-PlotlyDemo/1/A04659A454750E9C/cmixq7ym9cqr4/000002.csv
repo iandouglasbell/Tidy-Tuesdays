@@ -1,3 +1,0 @@
-"0","fig <- plot_ly(FGZ_Precip, x = ~Total_Precip, type = ""histogram"")"
-"0",""
-"0","fig"
