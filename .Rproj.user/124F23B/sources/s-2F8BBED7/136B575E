@@ -3,9 +3,9 @@
     "path": "~/GitHub/Tidy-Tuesdays/2021-05-12/Broadband.R",
     "project_path": "2021-05-12/Broadband.R",
     "type": "r_source",
-    "hash": "0",
+    "hash": "1802270894",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1620854085843.0,
     "source_on_save": false,
     "relative_order": 16,
@@ -17,11 +17,11 @@
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1620854097,
+    "lastKnownWriteTime": 1620854282,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1620854100780,
+    "last_content_update": 1620854282346,
     "read_only": false,
     "read_only_alternatives": []
 }
